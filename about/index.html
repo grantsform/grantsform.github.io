@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>About - GRANT&#39;S FORM - Dilutions Of Grant&#39;ur</title>
+    <meta name="description" content="GRANT&#39;S FORM - Dilutions Of Grant&#39;eur.">
+    <meta name="author" content="Joshua Steven Grant (ie: Jost Grant)">
+    <meta name="keywords" content="LISP, Godot, Devlog, Life">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://grantsform.github.io/about/">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/chroma.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = { theme: { extend: { colors: { solar: { primary: '#ffd54f', secondary: '#ffffff', tertiary: '#0a1628', 'bg-primary': '#0a1628', 'bg-secondary': '#0d2137', 'bg-tertiary': '#1e3a5f', 'text-primary': '#ffffff', 'text-secondary': '#ffd54f', 'text-muted': '#90caf9', border: '#1e3a5f', hover: '#ffeb3b', focus: '#2196f3' }, yellow: { 50: '#fffde7', 100: '#fff9c4', 200: '#fff59d', 300: '#fff176', 400: '#ffee58', 500: '#ffd54f', 600: '#ffca28', 700: '#ffb300', 800: '#ffa000', 900: '#ff8f00' }, fontFamily: { sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'] }, animation: { 'fade-in': 'fadeIn 0.5s ease-in-out', 'slide-up': 'slideUp 0.3s ease-out', 'scale-in': 'scaleIn 0.2s ease-out' }, keyframes: { fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } }, slideUp: { '0%': { transform: 'translateY(20px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } }, scaleIn: { '0%': { transform: 'scale(0.95)', opacity: '0' }, '100%': { transform: 'scale(1)', opacity: '1' } } }, plugins: [function({ addUtilities }) { addUtilities({ '.glass': { 'background': 'rgba(255, 255, 255, 0.1)', 'backdrop-filter': 'blur(10px)', 'border': '1px solid rgba(255, 255, 255, 0.2)' }, '.solar-gradient': { 'background': 'linear-gradient(135deg, #ffd54f 0%, #ffeb3b 100%)' }, '.solar-glow': { 'box-shadow': '0 0 20px rgba(255, 213, 79, 0.3)' } }) } ] }}}}
+    </script>
+    
+    
+    <link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="Posts RSS Feed">
+    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="RSS Feed">
+    
+    
+</head>
+<body class="site-body">
+    
+<style>
+#ocean-canvas-wrap { 
+  position: fixed; 
+  inset: 0; 
+  z-index: -1; 
+  pointer-events: none; 
+  background: linear-gradient(180deg, #0a1628 0%, #1e3a5f 40%, #2196f3 70%, #64b5f6 100%);
+  overflow: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+ 
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat-x;
+  transform-origin: center bottom;
+}
+
+.wave1 {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 85%, rgba(33, 150, 243, 0.15) 85%, rgba(33, 150, 243, 0.15) 100%);
+  animation: wave-drift 25s linear infinite;
+  opacity: 0.8;
+}
+
+.wave2 {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 75%, rgba(30, 136, 229, 0.2) 75%, rgba(30, 136, 229, 0.2) 100%);
+  animation: wave-drift 20s linear infinite reverse;
+  opacity: 0.7;
+}
+
+.wave3 {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 65%, rgba(25, 118, 210, 0.25) 65%, rgba(25, 118, 210, 0.25) 100%);
+  animation: wave-drift 18s linear infinite;
+  opacity: 0.8;
+}
+
+.wave4 {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 55%, rgba(21, 101, 192, 0.3) 55%, rgba(21, 101, 192, 0.3) 100%);
+  animation: wave-drift 22s linear infinite reverse;
+  opacity: 0.7;
+}
+
+.wave5 {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 45%, rgba(33, 150, 243, 0.2) 45%, rgba(33, 150, 243, 0.2) 100%);
+  animation: wave-drift 28s linear infinite;
+  opacity: 0.6;
+}
+
+.wave6 {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 35%, rgba(30, 136, 229, 0.15) 35%, rgba(30, 136, 229, 0.15) 100%);
+  animation: wave-drift 32s linear infinite reverse;
+  opacity: 0.5;
+}
+
+.wave7 {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(25, 118, 210, 0.1) 25%, rgba(25, 118, 210, 0.1) 100%);
+  animation: wave-drift 35s linear infinite;
+  opacity: 0.4;
+}
+
+.wave8 {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 15%, rgba(33, 150, 243, 0.08) 15%, rgba(33, 150, 243, 0.08) 100%);
+  animation: wave-drift 40s linear infinite reverse;
+  opacity: 0.3;
+}
+
+ 
+.svg-waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  bottom: 0;
+}
+
+.svg-wave svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.svg-wave1 { animation: wave-drift 12s linear infinite; bottom: 0; }
+.svg-wave2 { animation: wave-drift 15s linear infinite reverse; bottom: 5%; }
+.svg-wave3 { animation: wave-drift 18s linear infinite; bottom: 12%; }
+.svg-wave4 { animation: wave-drift 22s linear infinite reverse; bottom: 20%; }
+.svg-wave5 { animation: wave-drift 26s linear infinite; bottom: 30%; }
+.svg-wave6 { animation: wave-drift 30s linear infinite reverse; bottom: 42%; }
+.svg-wave7 { animation: wave-drift 35s linear infinite; bottom: 55%; }
+.svg-wave8 { animation: wave-drift 40s linear infinite reverse; bottom: 70%; }
+
+@keyframes wave-drift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+ 
+@media (prefers-reduced-motion: reduce) {
+  .wave, .svg-wave { animation: none; }
+}
+</style>
+
+<div id="ocean-canvas-wrap" aria-hidden="true">
+  <div class="svg-waves">
+    <div class="svg-wave svg-wave8">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="rgba(33, 150, 243, 0.06)" d="M0,50 C360,100 720,0 1080,50 C1260,75 1440,50 1440,50 L1440,100 L0,100 Z"/>
+      </svg>
+    </div>
+    <div class="svg-wave svg-wave7">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="rgba(30, 136, 229, 0.08)" d="M0,60 C320,20 640,80 960,40 C1200,10 1440,60 1440,60 L1440,100 L0,100 Z"/>
+      </svg>
+    </div>
+    <div class="svg-wave svg-wave6">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="rgba(25, 118, 210, 0.1)" d="M0,40 C240,80 480,20 720,60 C960,100 1200,40 1440,40 L1440,100 L0,100 Z"/>
+      </svg>
+    </div>
+    <div class="svg-wave svg-wave5">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="rgba(21, 101, 192, 0.15)" d="M0,70 C180,30 360,90 540,50 C720,10 900,70 1080,30 C1260,0 1440,70 1440,70 L1440,100 L0,100 Z"/>
+      </svg>
+    </div>
+    <div class="svg-wave svg-wave4">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="rgba(33, 150, 243, 0.2)" d="M0,50 C288,90 576,10 864,50 C1152,90 1440,50 1440,50 L1440,100 L0,100 Z"/>
+      </svg>
+    </div>
+    <div class="svg-wave svg-wave3">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="rgba(30, 136, 229, 0.25)" d="M0,30 C360,70 720,10 1080,50 C1260,70 1440,30 1440,30 L1440,100 L0,100 Z"/>
+      </svg>
+    </div>
+    <div class="svg-wave svg-wave2">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="rgba(25, 118, 210, 0.35)" d="M0,60 C240,20 480,80 720,40 C960,0 1200,60 1440,60 L1440,100 L0,100 Z"/>
+      </svg>
+    </div>
+    <div class="svg-wave svg-wave1">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="rgba(13, 71, 161, 0.5)" d="M0,40 C360,80 720,20 1080,60 C1260,80 1440,40 1440,40 L1440,100 L0,100 Z"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+    <style>
+ 
+#buoy-container {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  pointer-events: auto;
+  cursor: grab;
+  z-index: 9999;
+  transition: transform 0.15s ease-out;
+}
+#buoy-container:active {
+  cursor: grabbing;
+}
+#buoy-speech {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #333;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#buoy-speech.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+#buoy-speech::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #ffffff;
+}
+#buoy-svg {
+  width: 100%;
+  height: 100%;
+}
+.buoy-body { fill: #ff6b35; }
+.buoy-stripe { fill: #ffffff; }
+.buoy-eye-white { fill: #ffffff; }
+.buoy-pupil { fill: #1a1a1a; transition: transform 0.1s ease-out; }
+.buoy-highlight { fill: rgba(255,255,255,0.4); }
+.buoy-shadow { fill: rgba(0,0,0,0.15); }
+</style>
+
+
+<div id="buoy-container">
+  <div id="buoy-speech">Hi! I'm Baba Bouy.</div>
+  <svg id="buoy-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      
+      <mask id="buoy-hole-mask">
+        <rect x="0" y="0" width="100" height="100" fill="white"/>
+        <circle cx="50" cy="50" r="18" fill="black"/>
+      </mask>
+    </defs>
+    
+    <ellipse cx="52" cy="54" rx="38" ry="38" class="buoy-shadow" mask="url(#buoy-hole-mask)"/>
+    
+    <circle cx="50" cy="50" r="38" class="buoy-body" mask="url(#buoy-hole-mask)"/>
+    
+    <g mask="url(#buoy-hole-mask)">
+      <path d="M50 12 A38 38 0 0 1 88 50 L72 50 A22 22 0 0 0 50 28 Z" class="buoy-stripe"/>
+      <path d="M50 88 A38 38 0 0 1 12 50 L28 50 A22 22 0 0 0 50 72 Z" class="buoy-stripe"/>
+    </g>
+    
+    <g id="buoy-eyes">
+      
+      <ellipse cx="38" cy="45" rx="10" ry="12" class="buoy-eye-white"/>
+      <circle id="left-pupil" cx="38" cy="45" r="5" class="buoy-pupil"/>
+      <ellipse cx="36" cy="42" rx="2" ry="3" class="buoy-highlight"/>
+      
+      <ellipse cx="62" cy="45" rx="10" ry="12" class="buoy-eye-white"/>
+      <circle id="right-pupil" cx="62" cy="45" r="5" class="buoy-pupil"/>
+      <ellipse cx="60" cy="42" rx="2" ry="3" class="buoy-highlight"/>
+    </g>
+    
+    <path d="M30 25 Q40 20 55 22 Q45 28 35 30 Z" fill="rgba(255,255,255,0.3)"/>
+  </svg>
+</div>
+
+<script>
+(function() {
+  const buoy = document.getElementById('buoy-container');
+  const buoySvg = document.getElementById('buoy-svg');
+  const leftPupil = document.getElementById('left-pupil');
+  const rightPupil = document.getElementById('right-pupil');
+  const speechBubble = document.getElementById('buoy-speech');
+  
+  if (!buoy || !leftPupil || !rightPupil) return;
+  
+  
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  
+  function playBeep() {
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+    oscillator.type = 'sine';
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.1);
+  }
+  
+  function playR2D2Scream() {
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    oscillator.frequency.setValueAtTime(1500, audioContext.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(300, audioContext.currentTime + 1.0);
+    oscillator.type = 'sine';
+    gainNode.gain.setValueAtTime(0.5, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.0);
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 1.0);
+  }
+  
+  function playPongBlip() {
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    oscillator.frequency.setValueAtTime(1000, audioContext.currentTime);
+    oscillator.type = 'square';
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.1);
+  }
+  
+  let buoyX = window.innerWidth / 2;
+  let buoyY = window.innerHeight / 2;
+  let mouseX = buoyX;
+  let mouseY = buoyY;
+  
+  
+  let velocityX = 0;
+  let velocityY = 0;
+  let rotation = 0;
+  let rotationVelocity = 0;
+  let isThrown = false;
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let dragHistory = [];
+  
+  
+  document.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    if (isDragging) {
+      
+      dragHistory.push({ x: e.clientX, y: e.clientY, time: Date.now() });
+      if (dragHistory.length > 5) dragHistory.shift();
+      
+      
+      buoyX = e.clientX;
+      buoyY = e.clientY;
+    }
+  });
+  
+  
+  buoy.addEventListener('mousedown', function(e) {
+    e.preventDefault();
+    isDragging = true;
+    isThrown = false;
+    velocityX = 0;
+    velocityY = 0;
+    rotationVelocity = 0;
+    dragHistory = [{ x: e.clientX, y: e.clientY, time: Date.now() }];
+    buoy.style.cursor = 'grabbing';
+    
+    
+    speechBubble.classList.remove('visible');
+  });
+  
+  
+  document.addEventListener('mouseup', function(e) {
+    if (isDragging) {
+      isDragging = false;
+      buoy.style.cursor = 'grab';
+      
+      
+      if (dragHistory.length >= 2) {
+        const recent = dragHistory[dragHistory.length - 1];
+        const old = dragHistory[0];
+        const dt = (recent.time - old.time) / 1000;
+        
+        if (dt > 0) {
+          velocityX = (recent.x - old.x) / dt * 0.04;
+          velocityY = (recent.y - old.y) / dt * 0.04;
+          
+          const speed = Math.hypot(velocityX, velocityY);
+          if (speed > 10) {
+            isThrown = true;
+            rotationVelocity = velocityX * 0.15; 
+          }
+        }
+      }
+    }
+  });
+  
+  
+  let touchStartTime = 0;
+  let touchStartPos = { x: 0, y: 0 };
+  
+  buoy.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    const touch = e.touches[0];
+    touchStartTime = Date.now();
+    touchStartPos = { x: touch.clientX, y: touch.clientY };
+    isDragging = true;
+    isThrown = false;
+    velocityX = 0;
+    velocityY = 0;
+    rotationVelocity = 0;
+    dragHistory = [{ x: touch.clientX, y: touch.clientY, time: Date.now() }];
+  });
+  
+  document.addEventListener('touchmove', function(e) {
+    if (isDragging) {
+      const touch = e.touches[0];
+      mouseX = touch.clientX;
+      mouseY = touch.clientY;
+      dragHistory.push({ x: touch.clientX, y: touch.clientY, time: Date.now() });
+      if (dragHistory.length > 5) dragHistory.shift();
+      buoyX = touch.clientX;
+      buoyY = touch.clientY;
+    }
+  });
+  
+  document.addEventListener('touchend', function(e) {
+    if (isDragging) {
+      isDragging = false;
+      
+      const touchDuration = Date.now() - touchStartTime;
+      const lastPos = dragHistory.length > 0 ? dragHistory[dragHistory.length - 1] : touchStartPos;
+      const touchDistance = Math.hypot(lastPos.x - touchStartPos.x, lastPos.y - touchStartPos.y);
+      
+      
+      if (touchDuration < 300 && touchDistance < 20) {
+        if (!isThrown) {
+          if (clickCount < 2) {
+            speechBubble.textContent = initialMessage;
+          } else {
+            let message;
+            if (consecutivePain >= 3) {
+              message = otherMessages[Math.floor(Math.random() * otherMessages.length)];
+              consecutivePain = 0;
+              lastWasPain = false;
+            } else {
+              if (Math.random() < 0.7) {
+                message = painMessages[Math.floor(Math.random() * painMessages.length)];
+                consecutivePain++;
+                lastWasPain = true;
+              } else {
+                message = otherMessages[Math.floor(Math.random() * otherMessages.length)];
+                consecutivePain = 0;
+                lastWasPain = false;
+              }
+            }
+            speechBubble.textContent = message;
+          }
+          speechBubble.classList.add('visible');
+          playBeep();
+          
+          if (speechTimeout) clearTimeout(speechTimeout);
+          
+          speechTimeout = setTimeout(function() {
+            speechBubble.classList.remove('visible');
+            clickCount = 0;
+            lastWasPain = false;
+            consecutivePain = 0;
+          }, 3000);
+          
+          clickCount++;
+        }
+        return;
+      }
+      
+      
+      if (dragHistory.length >= 2) {
+        const recent = dragHistory[dragHistory.length - 1];
+        const old = dragHistory[0];
+        const dt = (recent.time - old.time) / 1000;
+        
+        if (dt > 0) {
+          velocityX = (recent.x - old.x) / dt * 0.04;
+          velocityY = (recent.y - old.y) / dt * 0.04;
+          
+          const speed = Math.hypot(velocityX, velocityY);
+          if (speed > 10) {
+            isThrown = true;
+            rotationVelocity = velocityX * 0.15;
+          }
+        }
+      }
+    }
+  });
+  
+  let speechTimeout = null;
+  let clickCount = 0;
+  const initialMessage = "Hi! I'm Baba Bouy.";
+  const painMessages = ["Ow!", "Ouch!"];
+  const otherMessages = ["Stop That!", "Quit it!", "I'm Telling!", "That Hurts!", "Please Be Gentle!", "Yikes!", "Whoa!", "Easy There!", "Take It Easy!", "Hey!", "Cut It Out!"];
+  let lastWasPain = false;
+  let consecutivePain = 0;
+  
+  
+  function animateBuoy() {
+    const buoySize = 80;
+    const halfSize = buoySize / 2;
+    
+    if (isThrown) {
+      
+      const friction = 0.98;
+      const bounceDamping = 0.7;
+      
+      
+      buoyX += velocityX;
+      buoyY += velocityY;
+      
+      
+      velocityX *= friction;
+      velocityY *= friction;
+      
+      
+      rotation += rotationVelocity;
+      rotationVelocity *= 0.98;
+      
+      
+      let bounced = false;
+      
+      
+      if (buoyX - halfSize < 0) {
+        buoyX = halfSize;
+        velocityX = -velocityX * bounceDamping;
+        rotationVelocity = -rotationVelocity * 0.8;
+        bounced = true;
+      }
+      
+      if (buoyX + halfSize > window.innerWidth) {
+        buoyX = window.innerWidth - halfSize;
+        velocityX = -velocityX * bounceDamping;
+        rotationVelocity = -rotationVelocity * 0.8;
+        bounced = true;
+      }
+      
+      if (buoyY - halfSize < 0) {
+        buoyY = halfSize;
+        velocityY = -velocityY * bounceDamping;
+        bounced = true;
+      }
+      
+      if (buoyY + halfSize > window.innerHeight) {
+        buoyY = window.innerHeight - halfSize;
+        velocityY = -velocityY * bounceDamping;
+        bounced = true;
+      }
+      
+      
+      if (bounced) {
+        speechBubble.textContent = 'AHHHHHHHHH!';
+        speechBubble.classList.add('visible');
+        playPongBlip();
+        if (speechTimeout) clearTimeout(speechTimeout);
+        speechTimeout = setTimeout(function() {
+          speechBubble.classList.remove('visible');
+          speechBubble.textContent = "Hi! I'm Baba Bouy.";
+        }, 1000);
+      }
+      
+      
+      const speed = Math.hypot(velocityX, velocityY);
+      if (speed < 1 && Math.abs(rotationVelocity) < 1) {
+        isThrown = false;
+        
+        rotation = rotation % 360;
+        if (rotation > 180) rotation -= 360;
+        if (rotation < -180) rotation += 360;
+      }
+      
+      
+      buoySvg.style.transform = 'rotate(' + rotation + 'deg)';
+      
+    } else if (!isDragging) {
+      
+      
+      
+      rotation *= 0.9;
+      if (Math.abs(rotation) < 0.5) rotation = 0;
+      buoySvg.style.transform = 'rotate(' + rotation + 'deg)';
+      
+      
+      const dx = mouseX - buoyX;
+      const dy = mouseY - buoyY;
+      const distToMouse = Math.hypot(dx, dy);
+      
+      
+      const minDistance = 80;
+      
+      let targetX = mouseX;
+      let targetY = mouseY;
+      
+      
+      if (distToMouse < minDistance && distToMouse > 0) {
+        const angle = Math.atan2(dy, dx);
+        targetX = mouseX - Math.cos(angle) * minDistance;
+        targetY = mouseY - Math.sin(angle) * minDistance;
+      }
+      
+      
+      const ease = 0.03;
+      buoyX += (targetX - buoyX) * ease;
+      buoyY += (targetY - buoyY) * ease;
+    }
+    
+    
+    buoy.style.left = (buoyX - halfSize) + 'px';
+    buoy.style.top = (buoyY - halfSize) + 'px';
+    
+    
+    const buoyCenterX = buoyX;
+    const buoyCenterY = buoyY;
+    
+    
+    const leftEyeX = buoyCenterX - 12;
+    const leftEyeY = buoyCenterY - 5;
+    const leftAngle = Math.atan2(mouseY - leftEyeY, mouseX - leftEyeX);
+    const leftDist = Math.min(4, Math.hypot(mouseX - leftEyeX, mouseY - leftEyeY) / 50);
+    const leftPupilOffsetX = Math.cos(leftAngle) * leftDist;
+    const leftPupilOffsetY = Math.sin(leftAngle) * leftDist;
+    leftPupil.setAttribute('cx', 38 + leftPupilOffsetX);
+    leftPupil.setAttribute('cy', 45 + leftPupilOffsetY);
+    
+    
+    const rightEyeX = buoyCenterX + 12;
+    const rightEyeY = buoyCenterY - 5;
+    const rightAngle = Math.atan2(mouseY - rightEyeY, mouseX - rightEyeX);
+    const rightDist = Math.min(4, Math.hypot(mouseX - rightEyeX, mouseY - rightEyeY) / 50);
+    const rightPupilOffsetX = Math.cos(rightAngle) * rightDist;
+    const rightPupilOffsetY = Math.sin(rightAngle) * rightDist;
+    rightPupil.setAttribute('cx', 62 + rightPupilOffsetX);
+    rightPupil.setAttribute('cy', 45 + rightPupilOffsetY);
+    
+    requestAnimationFrame(animateBuoy);
+  }
+  
+  
+  animateBuoy();
+  
+  
+  buoy.addEventListener('click', function(e) {
+    if (!isThrown && !isDragging) {
+      if (clickCount < 2) {
+        speechBubble.textContent = initialMessage;
+      } else {
+        let message;
+        if (consecutivePain >= 3) {
+          message = otherMessages[Math.floor(Math.random() * otherMessages.length)];
+          consecutivePain = 0;
+          lastWasPain = false;
+        } else {
+          if (Math.random() < 0.7) {
+            message = painMessages[Math.floor(Math.random() * painMessages.length)];
+            consecutivePain++;
+            lastWasPain = true;
+          } else {
+            message = otherMessages[Math.floor(Math.random() * otherMessages.length)];
+            consecutivePain = 0;
+            lastWasPain = false;
+          }
+        }
+        speechBubble.textContent = message;
+      }
+      speechBubble.classList.add('visible');
+      playBeep();
+      
+      if (speechTimeout) clearTimeout(speechTimeout);
+      
+      speechTimeout = setTimeout(function() {
+        speechBubble.classList.remove('visible');
+        clickCount = 0;
+        lastWasPain = false;
+        consecutivePain = 0;
+      }, 3000);
+      
+      clickCount++;
+    }
+  });
+})();
+</script>
+
+    <div class="site-wrapper">
+        <header class="site-header">
+            <style>
+ 
+.nav-item:hover {
+  color: #ffd54f !important;
+  background-color: transparent !important;
+}
+.active-nav-item {
+  color: #ffd54f !important;
+}
+.social-icon:hover {
+  color: #ffd54f !important;
+}
+.dropdown button:hover {
+  color: #ffd54f !important;
+  background-color: transparent !important;
+}
+.dropdown a:hover {
+  color: #ffd54f !important;
+}
+</style>
+
+<nav class="w-full bg-black border-b border-gray-800 sticky top-0 z-50" style="background: #0a1628 !important; max-width: 100vw; overflow-x: hidden;" role="navigation">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-12">
+      <a href="/" class="flex items-center text-xl font-bold text-white transition-colors font-bold" style="color: #ffd54f !important;">GRANT'S FORM</a>
+      
+      <div class="hidden md:flex md:items-center md:space-x-8 hidden md:flex md:items-center md:space-x-4">
+        
+        <a href="https://grantcanon.github.io" class="px-3 py-2 text-sm font-medium rounded-md transition-colors nav-item text-gray-300 hover:bg-gray-800 ">Canon</a>
+        
+        <a href="/about/" class="px-3 py-2 text-sm font-medium rounded-md transition-colors nav-item text-gray-300 hover:bg-gray-800 ">About</a>
+        
+        <a href="/projects/" class="px-3 py-2 text-sm font-medium rounded-md transition-colors nav-item text-gray-300 hover:bg-gray-800 ">Projects</a>
+        
+        <a href="/posts/" class="px-3 py-2 text-sm font-medium rounded-md transition-colors nav-item text-gray-300 hover:bg-gray-800 ">Posts</a>
+        
+        <a href="/series/" class="px-3 py-2 text-sm font-medium rounded-md transition-colors nav-item text-gray-300 hover:bg-gray-800 ">Series</a>
+        
+        
+        
+        <div class="relative dropdown">
+          <button class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md transition-colors flex items-center" onclick="toggleDropdown('tags-dropdown')">
+            Tags <span class="ml-1">▼</span>
+          </button>
+          <div class="absolute top-full left-0 mt-1 w-48 bg-gray-800 border border-gray-700 rounded-md shadow-lg hidden" id="tags-dropdown">
+            
+            <a class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors" href="/tags/meta">Meta</a>
+            
+          </div>
+        </div>
+        
+        
+        <div class="relative dropdown">
+          <button class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md transition-colors flex items-center" onclick="toggleDropdown('sub-dropdown')">
+            Sub <span class="ml-1">▼</span>
+          </button>
+          <div class="absolute top-full left-0 mt-1 w-32 bg-gray-800 border border-gray-700 rounded-md shadow-lg hidden" id="sub-dropdown">
+            <a class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors" href="/posts/index.xml">Posts RSS</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hidden md:flex md:items-center md:space-x-4">
+        <a class="text-gray-300 transition-colors p-2 social-icon" href="https://github.com/grantsform" target="_blank" title="GitHub">
+          <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="text-gray-300 transition-colors p-2 social-icon" href="https://github.com/sponsors/grantsform" target="_blank" title="Sponsor">
+          <i class="fas fa-heart fa-lg"></i>
+        </a>
+      </div>
+      
+      <button class="md:hidden p-2 text-gray-300 transition-colors social-icon" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  
+  
+  <div class="md:hidden border-t border-gray-700 hidden" id="mobile-menu">
+    <div class="px-4 py-2 space-y-1">
+      
+      <a class="block px-3 py-2 text-gray-300 rounded-md transition-colors nav-item " href="https://grantcanon.github.io">Canon</a>
+      
+      <a class="block px-3 py-2 text-gray-300 rounded-md transition-colors nav-item " href="/about/">About</a>
+      
+      <a class="block px-3 py-2 text-gray-300 rounded-md transition-colors nav-item " href="/projects/">Projects</a>
+      
+      <a class="block px-3 py-2 text-gray-300 rounded-md transition-colors nav-item " href="/posts/">Posts</a>
+      
+      <a class="block px-3 py-2 text-gray-300 rounded-md transition-colors nav-item " href="/series/">Series</a>
+      
+      
+      
+      <div class="pt-2 border-t border-gray-700 mt-2">
+        <p class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">Tags</p>
+        
+        <a class="block px-3 py-2 text-sm text-gray-400 rounded-md transition-colors nav-item" href="/tags/meta">Meta</a>
+        
+      </div>
+      
+      
+      <div class="pt-2 border-t border-gray-700 mt-2">
+        <p class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">Subscribe</p>
+        <a class="block px-3 py-2 text-sm text-gray-400 rounded-md transition-colors nav-item" href="/posts/index.xml">Posts RSS</a>
+      </div>
+      
+      <div class="pt-2 border-t border-gray-700 mt-2 flex space-x-4 px-3 py-2">
+        <a class="text-gray-400 hover:text-yellow-400 transition-colors" href="https://github.com/grantsform" target="_blank" title="GitHub">
+          <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="text-gray-400 hover:text-yellow-400 transition-colors" href="https://github.com/sponsors/grantsform" target="_blank" title="Sponsor">
+          <i class="fas fa-heart fa-lg"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+function toggleDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  const allDropdowns = document.querySelectorAll('.dropdown > div:last-child');
+
+  
+  allDropdowns.forEach(d => {
+    if (d.id !== dropdownId) {
+      d.classList.add('hidden');
+    }
+  });
+
+  
+  dropdown.classList.toggle('hidden');
+}
+
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenu.classList.toggle('hidden');
+}
+
+
+document.addEventListener('click', function(event) {
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    if (!dropdown.contains(event.target)) {
+      const dropdownMenu = dropdown.querySelector('div:last-child');
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+});
+
+
+window.addEventListener('resize', function() {
+  if (window.innerWidth >= 768) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.add('hidden');
+  }
+});
+</script>
+
+            
+        </header>
+        
+        <main class="site-main" style="overflow-x: hidden; max-width: 100vw;">
+            
+<style>
+   
+  .bout-content {
+    padding: 2rem 0;
+    position: relative;
+    z-index: 10;
+  }
+  .bout-content article {
+    background: linear-gradient(180deg, #0a1628 0%, #1e3a5f 100%);
+    border: 1px solid rgba(33, 150, 243, 0.3);
+    border-radius: 1rem;
+    padding: 2rem;
+    color: #e0f7fa;
+    box-shadow: 0 4px 24px rgba(10, 22, 40, 0.5);
+  }
+  .bout-content h1, .bout-content h2, .bout-content h3,
+  .bout-content h4, .bout-content h5, .bout-content h6 {
+    color: #ffd54f;
+  }
+  .bout-content a {
+    color: #64b5f6;
+    text-decoration: underline;
+  }
+  .bout-content a:hover {
+    color: #4dd0e1;
+  }
+   
+  .bout-content .card {
+    background: linear-gradient(180deg, #102840 0%, #0d1f33 100%);
+    border: 1px solid rgba(77, 208, 225, 0.3);
+    color: #e0f7fa;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 12px rgba(10, 22, 40, 0.4);
+  }
+  .bout-content .card-body {
+    padding: 1.5rem;
+  }
+  .bout-content .card-title {
+    color: #ffd54f;
+    margin-bottom: 0.75rem;
+  }
+  .bout-content .card-text {
+    color: #b3e5fc;
+  }
+   
+  .bout-content .profile-right {
+    background: rgba(16, 40, 64, 0.5);
+    border: 1px solid rgba(77, 208, 225, 0.2);
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
+  .bout-content #profileNameText {
+    color: #ffd54f;
+  }
+  .bout-content #profileDesc {
+    color: #b3e5fc;
+  }
+</style>
+<div class="w-9/10 max-w-7xl mx-auto px-4 bout-content">
+  <article>
+    <div class="content">
+      <style>
+  .flip-indicator {
+    font-size: 2rem;
+    color: #ffd54f;
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+    transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+    user-select: none;
+    cursor: pointer;
+    opacity: 0.85;
+  }
+  #profileSwap:hover .flip-indicator {
+    transform: rotateY(180deg) scale(1.2);
+    opacity: 1;
+  }
+  .profile-right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 2rem;
+  }
+  .profile-text {
+    text-align: right;
+    min-width: 220px;
+    flex: 1;
+  }
+  #profileImg {
+    margin-left: 2rem;
+    margin-right: 0;
+    float: right;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  }
+  #profileDesc {
+    padding-right: 3.5rem;
+  }
+  #profileName {
+    font-size: 1.5rem;
+  }
+  
+  /* Responsive styles for small screens */
+  @media (max-width: 576px) {
+    .profile-right {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .profile-text {
+      text-align: center;
+      min-width: unset;
+      width: 100%;
+    }
+    #profileImg {
+      margin-left: 0;
+      float: none;
+    }
+    #profileName {
+      flex-direction: column;
+      font-size: 1.25rem;
+    }
+    #profileNameText {
+      text-align: center;
+    }
+    .flip-indicator {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.5rem;
+    }
+    #profileDesc {
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+</style>
+<h1 id="about">About</h1>
+<div class="profile-right mb-4" id="profileSwap" style="cursor:pointer;">
+  <img id="profileImg" src="/face-grantsform.webp" alt="Avatar" class="rounded shadow" style="width:128px;height:128px;object-fit:cover;transition:box-shadow 0.2s;">
+  <div class="profile-text">
+    <h2 class="mb-1 d-flex align-items-center justify-content-end" id="profileName">
+      <span id="profileNameText">GRANT'S FORM (@grantsform)</span>
+      <span class="flip-indicator" id="flipIndicator" title="Click to flip profile">↻</span>
+    </h2>
+    <p class="lead mb-0" id="profileDesc"></p>
+  </div>
+</div>
+<script>
+// Avatar/name swap logic
+const profiles = [
+  { img: '/face-grantsform.webp', name: "GRANT'S FORM<br>(@grantsform)", desc: 'Big Baby.' },
+  { img: '/face-jostgrant.webp', name: 'Joshua Steven Grant<br>(ie: Jost Grant)', desc: 'Man-Child.' }
+];
+let current = 0;
+function updateProfile(idx) {
+  document.getElementById('profileImg').src = profiles[idx].img;
+  document.getElementById('profileNameText').innerHTML = profiles[idx].name;
+  document.getElementById('profileDesc').textContent = profiles[idx].desc;
+}
+updateProfile(0);
+document.getElementById('profileSwap').onclick = function() {
+  current = 1 - current;
+  updateProfile(current);
+  document.getElementById('flipIndicator').style.transform = 'rotateY(360deg) scale(1.3)';
+  setTimeout(function(){ document.getElementById('flipIndicator').style.transform = ''; }, 350);
+};
+</script>
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">About GRANT'S FORM</h5>
+    <p class="card-text">... ... ...</p>
+  </div>
+</div>
+
+    </div>
+  </article>
+</div>
+
+        </main>
+        
+        <style>
+.footer-wrapper { position: relative; margin-top: 0; }
+.footer-wave-container { position: absolute; top: -100px; left: 0; width: 100%; height: 100px; overflow: hidden; z-index: 1; }
+.footer-wave { position: absolute; width: 200%; height: 100%; display: flex; }
+.footer-wave svg { flex: 0 0 50%; height: 100%; }
+.footer-wave.wave1 { animation: footerWaveFlow1 12s linear infinite; opacity: 0.4; }
+.footer-wave.wave2 { animation: footerWaveFlow2 8s linear infinite; opacity: 0.6; top: 10px; }
+.footer-wave.wave3 { animation: footerWaveFlow3 6s linear infinite; opacity: 1; top: 20px; }
+.footer-wave .shape-fill { fill: #f5e6d3; }
+.footer-wave .foam-fill { fill: #ffffff; }
+@keyframes footerWaveFlow1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes footerWaveFlow2 {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+@keyframes footerWaveFlow3 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.site-footer { background: linear-gradient(180deg, #f5e6d3, #e8d4bc); padding: 2rem 1rem; color: #5d4037; border: none; outline: none; box-shadow: none; }
+.footer-credit { color: #5d4037; }
+.footer-credit a.accent { color: #5d4037; font-weight: 600; text-decoration: none; }
+.footer-credit a.accent:hover { text-decoration: underline; color: #2e7d32; }
+.twitter-follow-button { border: 2px solid #5d4037; border-radius: 999px; display: inline-block; color: #5d4037; padding: 0.4rem 0.9rem; text-decoration: none; font-size: 0.9rem; }
+.twitter-follow-button:hover { background: rgba(46,125,50,0.1); color: #2e7d32; border-color: #2e7d32; }
+.socials-center { text-align: center; margin: 0.6rem 0 0.8rem; }
+.socials-center p { margin: 0; }
+.socials-center .social { display: inline-block; margin: 0 0.6rem; color: #5d4037; font-size: 28px; transition: transform 160ms ease, color 160ms ease; }
+.socials-center .social:hover { transform: translateY(-4px); color: #2e7d32; }
+.socials-center .social:focus { outline: 2px solid #5d4037; outline-offset: 4px; }
+.site-footer em { color: rgba(93,64,55,0.8); }
+@media (max-width: 768px) {
+  .mobile-break { display: none; }
+}
+</style>
+
+<div class="footer-wrapper">
+  
+  <div class="footer-wave-container">
+    
+    <div class="footer-wave wave1">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,50 C150,80 350,20 600,50 C850,80 1050,20 1200,50 L1200,120 L0,120 Z" class="foam-fill"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,50 C150,80 350,20 600,50 C850,80 1050,20 1200,50 L1200,120 L0,120 Z" class="foam-fill"></path>
+      </svg>
+    </div>
+    
+    <div class="footer-wave wave2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,60 C200,90 400,30 600,60 C800,90 1000,30 1200,60 L1200,120 L0,120 Z" class="foam-fill"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,60 C200,90 400,30 600,60 C800,90 1000,30 1200,60 L1200,120 L0,120 Z" class="foam-fill"></path>
+      </svg>
+    </div>
+    
+    <div class="footer-wave wave3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,70 C100,85 200,55 350,70 C500,85 650,55 800,70 C950,85 1100,55 1200,70 L1200,120 L0,120 Z" class="shape-fill"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,70 C100,85 200,55 350,70 C500,85 650,55 800,70 C950,85 1100,55 1200,70 L1200,120 L0,120 Z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    
+    <div class="socials-center" role="navigation" aria-label="Social links">
+    <p>
+      <a class="social" href="https://grantsform.github.io" target="_blank" rel="noopener" aria-label="Website">
+        <i class="fa-solid fa-house-user" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://gist.github.com/grantsform" target="_blank" rel="noopener" aria-label="Gists">
+        <i class="fa-solid fa-clipboard" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://github.com/grantsform" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://discord.gg/URbJp3sY4n" target="_blank" rel="noopener" aria-label="Discord">
+        <i class="fa-brands fa-discord" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://www.youtube.com/@grantsform" target="_blank" rel="noopener" aria-label="YouTube">
+        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://www.twitch.tv/grantsform" target="_blank" rel="noopener" aria-label="Twitch">
+        <i class="fa-brands fa-twitch" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://grantsform.itch.io/" target="_blank" rel="noopener" aria-label="Itch.io">
+        <i class="fa-brands fa-itch-io" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://suno.com/@grantsform" target="_blank" rel="noopener" aria-label="Suno">
+        <i class="fa-solid fa-music" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://tiktok.com/@grantsform" target="_blank" rel="noopener" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://cash.app/$grantsform" target="_blank" rel="noopener" aria-label="Cash App">
+        <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://paypal.me/grantsform" target="_blank" rel="noopener" aria-label="PayPal">
+        <i class="fa-brands fa-paypal" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://patreon.com/grantsform" target="_blank" rel="noopener" aria-label="Patreon">
+        <i class="fa-brands fa-patreon" aria-hidden="true"></i>
+      </a>
+      <a class="social" href="https://github.com/sponsors/grantsform" target="_blank" rel="noopener" aria-label="Sponsor">
+        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+      </a>
+    </p>
+  </div>
+  
+  <div class="footer-divider" style="background-color:#5d4037;height:4px;width:60%;margin:0 auto 2em auto;border-radius:2px;"></div>
+  
+  <div style="text-align: center;">
+    <p style="margin-bottom: 1.5em;">
+      <a href="https://twitter.com/grantsform" class="twitter-follow-button" style="color: #5d4037;" target="_blank" rel="noopener">
+        Follow @GrantsForm
+      </a>
+    </p>
+    <p class="footer-credit">
+      Built on <a class="accent" href="https://gohugo.io">Hugo</a>; With Some <a class="accent" href="https://lisp-lang.org/" target="_blank">Lisp</a>.
+    </p>
+    <p>
+      <em>All Content Here Is Under The CC-BY 4.x, Unless Explicitly Stated Otherwise;<br class="mobile-break">And/Or Unless Said Content Does Not Originate From `Joshua Steven Grant (ie: Jost Grant)`.</em>
+    </p>
+  </div>
+  </footer>
+</div>
+
+    </div>
+    
+    
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    
+    
+</body>
+</html>

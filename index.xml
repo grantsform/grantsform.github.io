@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GRANT&#39;S FORM - Dilutions Of Grant&#39;ur</title>
+    <link>https://grantsform.github.io/</link>
+    <description>Recent content on GRANT&#39;S FORM - Dilutions Of Grant&#39;ur</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://grantsform.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Foreword On Moving Forwards</title>
+      <link>https://grantsform.github.io/posts/2026-02-02-the-foreword-on-moving-forwards/</link>
+      <pubDate>Mon, 02 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://grantsform.github.io/posts/2026-02-02-the-foreword-on-moving-forwards/</guid>
+      <description>&amp;hellip;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://grantsform.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://grantsform.github.io/about/</guid>
+      <description>&lt;style&gt;&#xA;  .flip-indicator {&#xA;    font-size: 2rem;&#xA;    color: #ffd54f;&#xA;    margin-right: 1rem;&#xA;    margin-left: 0.5rem;&#xA;    transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55);&#xA;    user-select: none;&#xA;    cursor: pointer;&#xA;    opacity: 0.85;&#xA;  }&#xA;  #profileSwap:hover .flip-indicator {&#xA;    transform: rotateY(180deg) scale(1.2);&#xA;    opacity: 1;&#xA;  }&#xA;  .profile-right {&#xA;    display: flex;&#xA;    flex-direction: row-reverse;&#xA;    align-items: center;&#xA;    justify-content: flex-end;&#xA;    width: 100%;&#xA;    gap: 2rem;&#xA;  }&#xA;  .profile-text {&#xA;    text-align: right;&#xA;    min-width: 220px;&#xA;    flex: 1;&#xA;  }&#xA;  #profileImg {&#xA;    margin-left: 2rem;&#xA;    margin-right: 0;&#xA;    float: right;&#xA;    box-shadow: 0 2px 12px rgba(0,0,0,0.12);&#xA;  }&#xA;  #profileDesc {&#xA;    padding-right: 3.5rem;&#xA;  }&#xA;  #profileName {&#xA;    font-size: 1.5rem;&#xA;  }&#xA;  &#xA;  /* Responsive styles for small screens */&#xA;  @media (max-width: 576px) {&#xA;    .profile-right {&#xA;      flex-direction: column;&#xA;      align-items: center;&#xA;      gap: 1rem;&#xA;    }&#xA;    .profile-text {&#xA;      text-align: center;&#xA;      min-width: unset;&#xA;      width: 100%;&#xA;    }&#xA;    #profileImg {&#xA;      margin-left: 0;&#xA;      float: none;&#xA;    }&#xA;    #profileName {&#xA;      flex-direction: column;&#xA;      font-size: 1.25rem;&#xA;    }&#xA;    #profileNameText {&#xA;      text-align: center;&#xA;    }&#xA;    .flip-indicator {&#xA;      margin: 0.5rem 0 0 0;&#xA;      font-size: 1.5rem;&#xA;    }&#xA;    #profileDesc {&#xA;      padding-right: 0;&#xA;      text-align: center;&#xA;    }&#xA;  }&#xA;&lt;/style&gt;&#xA;&lt;h1 id=&#34;about&#34;&gt;About&lt;/h1&gt;&#xA;&lt;div class=&#34;profile-right mb-4&#34; id=&#34;profileSwap&#34; style=&#34;cursor:pointer;&#34;&gt;&#xA;  &lt;img id=&#34;profileImg&#34; src=&#34;https://grantsform.github.io/face-grantsform.webp&#34; alt=&#34;Avatar&#34; class=&#34;rounded shadow&#34; style=&#34;width:128px;height:128px;object-fit:cover;transition:box-shadow 0.2s;&#34;&gt;&#xA;  &lt;div class=&#34;profile-text&#34;&gt;&#xA;    &lt;h2 class=&#34;mb-1 d-flex align-items-center justify-content-end&#34; id=&#34;profileName&#34;&gt;&#xA;      &lt;span id=&#34;profileNameText&#34;&gt;GRANT&#39;S FORM (@grantsform)&lt;/span&gt;&#xA;      &lt;span class=&#34;flip-indicator&#34; id=&#34;flipIndicator&#34; title=&#34;Click to flip profile&#34;&gt;↻&lt;/span&gt;&#xA;    &lt;/h2&gt;&#xA;    &lt;p class=&#34;lead mb-0&#34; id=&#34;profileDesc&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>https://grantsform.github.io/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://grantsform.github.io/projects/</guid>
+      <description>&lt;div class=&#34;card mb-3&#34;&gt;&#xA;  &lt;div class=&#34;card-body&#34;&gt;&#xA;    &lt;h1&gt;Projects&lt;/h1&gt;&#xA;    &lt;p class=&#34;lead&#34;&gt;Fleshing Out Soon&lt;/p&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
