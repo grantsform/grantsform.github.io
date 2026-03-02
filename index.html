@@ -25,6 +25,7 @@
     
     
     <link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="Posts RSS Feed">
+    <link rel="alternate" type="application/rss+xml" href="/tots/index.xml" title="Tots RSS Feed">
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="RSS Feed">
     
     
@@ -748,6 +749,8 @@
         
         <a href="/series/" class="px-3 py-2 text-sm font-medium rounded-md transition-colors nav-item text-gray-300 hover:bg-gray-800 ">Series</a>
         
+        <a href="/tots/" class="px-3 py-2 text-sm font-medium rounded-md transition-colors nav-item text-gray-300 hover:bg-gray-800 ">Tots 🗨</a>
+        
         
         
         <div class="relative dropdown">
@@ -768,6 +771,7 @@
           </button>
           <div class="absolute top-full left-0 mt-1 w-32 bg-gray-800 border border-gray-700 rounded-md shadow-lg hidden" id="sub-dropdown">
             <a class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors" href="/posts/index.xml">Posts RSS</a>
+            <a class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors" href="/tots/index.xml">Tots RSS</a>
           </div>
         </div>
       </div>
@@ -804,6 +808,8 @@
       
       <a class="block px-3 py-2 text-gray-300 rounded-md transition-colors nav-item " href="/series/">Series</a>
       
+      <a class="block px-3 py-2 text-gray-300 rounded-md transition-colors nav-item " href="/tots/">Tots 🗨</a>
+      
       
       
       <div class="pt-2 border-t border-gray-700 mt-2">
@@ -817,6 +823,7 @@
       <div class="pt-2 border-t border-gray-700 mt-2">
         <p class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">Subscribe</p>
         <a class="block px-3 py-2 text-sm text-gray-400 rounded-md transition-colors nav-item" href="/posts/index.xml">Posts RSS</a>
+        <a class="block px-3 py-2 text-sm text-gray-400 rounded-md transition-colors nav-item" href="/tots/index.xml">Tots RSS</a>
       </div>
       
       <div class="pt-2 border-t border-gray-700 mt-2 flex space-x-4 px-3 py-2">
@@ -1459,18 +1466,27 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div id="event-legend" class="event-legend" style="display:none;"></div>
         <ul id="upcoming-list">
-            <li data-date="2026-03-04">
+            <li data-date="2026-02-22" data-start="2026-02-22" data-end="2026-03-07">
               <div class="event-meta">
-                <span class="event-dot" style="background-color: #8bc34a;"></span>2026-03-04 · 00:00
+                <span class="event-dot" style="background-color: #00bcd4;"></span>2026-02-22 – 2026-03-07 · 00:00
+              </div>
+              <div class="event-title">
+                <a href="https://github.com/grantsform/" style="color: inherit; text-decoration: none;">Initial Github Setup</a>
+                <div class="event-desc muted">Initial Pushes For A Bunch Of Stuff (ongoing work through the week).</div>
+              </div>
+            </li>
+            <li data-date="2026-03-11">
+              <div class="event-meta">
+                <span class="event-dot" style="background-color: #8bc34a;"></span>2026-03-11 · 00:00
               </div>
               <div class="event-title">
                 <a href="https://stoat.chat" style="color: inherit; text-decoration: none;">Grant &#39;Canon Stoat Server</a>
                 <div class="event-desc muted">Initial version of the Grant &#39;Canon Stoat Server up and going.</div>
               </div>
             </li>
-            <li data-date="2026-03-07">
+            <li data-date="2026-03-14">
               <div class="event-meta">
-                <span class="event-dot" style="background-color: #e53935;"></span>2026-03-07 · 20:00
+                <span class="event-dot" style="background-color: #e53935;"></span>2026-03-14 · 20:00
               </div>
               <div class="event-title">
                 <a href="#" style="color: inherit; text-decoration: none;">Intro Video</a>
@@ -1484,7 +1500,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 
-<script type="application/json" id="events-data">[{"category":"Social","color":"#8bc34a","date":"2026-03-04","description":"Initial version of the Grant 'Canon Stoat Server up and going.","time":"00:00","title":"Grant 'Canon Stoat Server","url":"https://stoat.chat"},{"category":"Video","color":"#e53935","date":"2026-03-07","description":"Initial intro-video, even if it's just demostream b-roll.","time":"20:00","title":"Intro Video","url":"#"},{"category":"Stream","color":"#9c27b0","description":"Structuring things, on stream.","recurrence":{"byDay":["Tue","Fri"],"end":"2026-05-27","freq":"weekly","interval":1,"start":"2026-03-17"},"time":"14:00","title":"Struct Stream","url":"#"},{"category":"Release","color":"#00bcd4","description":"Initial Pushes For A Bunch Of Stuff (ongoing work through the week).","end":"2026-02-28","start":"2026-02-22","time":"00:00","title":"Initial Github Setup","url":"https://github.com/grantsform/"}]</script>
+<script type="application/json" id="events-data">[{"category":"Social","color":"#8bc34a","date":"2026-03-11","description":"Initial version of the Grant 'Canon Stoat Server up and going.","time":"00:00","title":"Grant 'Canon Stoat Server","url":"https://stoat.chat"},{"category":"Video","color":"#e53935","date":"2026-03-14","description":"Initial intro-video, even if it's just demostream b-roll.","time":"20:00","title":"Intro Video","url":"#"},{"category":"Stream","color":"#9c27b0","description":"Structuring things, on stream.","recurrence":{"byDay":["Tue","Fri"],"end":"2026-05-27","freq":"weekly","interval":1,"start":"2026-03-24"},"time":"14:00","title":"Struct Stream","url":"#"},{"category":"Release","color":"#00bcd4","description":"Initial Pushes For A Bunch Of Stuff (ongoing work through the week).","end":"2026-03-07","start":"2026-02-22","time":"00:00","title":"Initial Github Setup","url":"https://github.com/grantsform/"}]</script>
 
 <script>
 
@@ -2368,7 +2384,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
-  <script type="module" src="/js/mindmap.js?v=1772300832"></script>
+  <script type="module" src="/js/mindmap.js?v=1772570745"></script>
 <style>
 .featured { margin-top: 2rem; margin-bottom: 1.25rem; }
 .featured h2 { color: #ffd54f; }
@@ -2783,7 +2799,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <style>
-.latest-posts { margin: 2.5rem 0 4rem 0; }
+.latest-posts { margin: 2.5rem 0 0.5rem 0; }
 .latest-posts h2 { color: #ffd54f; margin-bottom: 1.2rem; }
 .posts-list { margin-bottom: 1.5rem; }
 .view-all-container { text-align: center; }
@@ -2803,7 +2819,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </style>
 
 <section class="latest-posts">
-  <h2>Latest Blog Posts</h2>
+  <h2>Latest Posts</h2>
   <div class="latest-parent">
     <div class="posts-list">
       <div class="posts-grid">
@@ -2820,11 +2836,188 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
     <div class="view-all-container">
-      <a href="/posts/" class="btn btn-sm btn-space">View all posts</a>
+      <a href="/posts/" class="btn btn-sm btn-space">View all</a>
     </div>
   </div>
 </section>
 
+
+	
+	<div class="flex justify-center mt-2">
+		<div class="w-full max-w-7xl">
+			
+<style>
+.latest-tot-section { margin: 2.5rem 0; }
+.latest-tot-section h2 { color: #ffd54f; margin-bottom: 1rem; }
+.latest-tot-title { text-align: left; }
+.latest-tot-section h2 a { color: #ffd54f; text-decoration: none; }
+.latest-tot-section h2 a:hover { text-decoration: underline; }
+.latest-tot-link { color: #64b5f6; text-decoration: none; }
+.latest-tot-link:hover { color: #ffd54f; }
+
+.tot-embed {
+  width: 100%;
+  max-width: none;
+  background: linear-gradient(180deg, #0d2137, #1a3a5c);
+  border: 1px solid rgba(33, 150, 243, 0.3);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  color: #e0f0ff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.tot-embed:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.tot-thread-header h3 { margin: 0 0 0.35rem 0; color: #ffd54f; font-size: 1.05rem; }
+.tot-thread-desc { color: rgba(224,240,255,0.6); margin: 0 0 0.6rem 0; }
+
+ 
+.tot-embed .tot-thread-posts .tot-post ~ .tot-post { display: none; }
+.tot-embed.expanded .tot-thread-posts .tot-post ~ .tot-post {
+  display: block;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(33,150,243,0.2);
+}
+
+.tot-embed .tot-post-body {
+  color: #e0f0ff; line-height: 1.55; word-wrap: break-word;
+}
+.tot-embed .tot-post-body p { margin: 0 0 0.4rem 0; }
+.tot-embed .tot-post-body p:last-child { margin-bottom: 0; }
+
+.tot-embed .tot-date {
+  display: block;
+  color: rgba(100,181,246,0.7);
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+}
+
+.tot-embed .tot-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.tot-embed .tot-tag {
+  background: rgba(33, 150, 243, 0.2);
+  color: #64b5f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+.tot-embed .tot-tag:hover { background: rgba(33, 150, 243, 0.35); }
+
+.tot-gag { color: rgba(224,240,255,0.45); text-align: center; font-size: 0.9rem; margin: 0.35rem 0 0.6rem 0; }
+
+.tot-embed .tot-footer {
+  display: flex; align-items: center; gap: 1rem;
+  margin-top: 0.6rem; padding-top: 0.5rem;
+  border-top: 1px solid rgba(33,150,243,0.15);
+}
+.tot-embed .tot-thread-link {
+  color: #64b5f6; font-size: 0.8rem; text-decoration: none;
+}
+.tot-embed .post-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.tot-embed .post-tag { background: rgba(33, 150, 243, 0.2); color: #64b5f6; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; text-decoration: none; }
+.tot-embed .post-tag:hover { background: rgba(33, 150, 243, 0.35); }
+
+.tot-expand-btn {
+  background: none;
+  border: 1px solid rgba(33,150,243,0.3);
+  color: #64b5f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tot-expand-btn:hover { background: rgba(33,150,243,0.15); color: #ffd54f; border-color: #ffd54f; }
+
+.view-tots-link {
+  display: inline-block; margin-top: 0.75rem;
+  color: #64b5f6; font-size: 0.85rem; text-decoration: none;
+}
+.view-tots-link:hover { color: #ffd54f; }
+
+ 
+.latest-tot-section .btn-space {
+  background: linear-gradient(180deg, #2196f3, #1976d2);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(33,150,243,0.25), inset 0 -2px 4px rgba(0,0,0,0.16);
+}
+.latest-tot-section .btn-space:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #42a5f5, #2196f3);
+}
+
+ 
+.tot-embed-container {
+  display: block;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.latest-tot-footer { text-align: center; margin-top: 0.8rem; }
+</style>
+
+<section class="latest-tot-section">
+  <h2 class="latest-tot-title"><a href="/tots/">Latest Tots</a></h2>
+
+  
+    <div class="latest-parent">
+      <div class="posts-list">
+        <div class="tot-embed-container">
+          <div class="tot-embed" id="latest-tot-embed">
+            <div class="tot-thread-header">
+              <h3><a href="https://grantsform.github.io/tots/quick-tot/" class="latest-tot-link">A Quick Tot</a></h3>
+              <p class="tot-thread-desc">What are tots and how I&#39;m gonna use them over other services.</p>
+            </div>
+
+            
+      <div class="post-tags">
+        <a href="/tots/?tag=intro" class="post-tag">#intro</a>
+      </div>
+        <div class="tot-gag"></div>
+
+            <div class="tot-thread-posts">
+<div class="tot-post">
+  <div class="tot-post-body">
+    Hey, hi, howdy everybody! This is example of a <code>tot</code>. A Tot is my site&rsquo;s answer to a self-hosted microblog kind-of / kinda thing. lol I don&rsquo;t know if it&rsquo;s the right answer, but it&rsquo;s a gradient solution between a full-blown post and the misc thought / quirky posting  and/or meme&rsquo;n I&rsquo;m apt to &ldquo;do on the timeline&rdquo;. This is more intended for / as progress over time that I plan to publically iterate on.
+<a href="/tots/?tag=intro" class="post-tag">#intro</a>
+  </div>
+  <div class="tot-refs">
+    <span class="muted">References:</span><a href="https://grantsform.github.io/tots/test-refs/#test-refs" class="tot-ref-link" title="Permalink to tot test-refs"><i class="fas fa-link"></i> test-refs</a>
+  </div>
+  <time class="tot-date" datetime="2026-03-02T10:00:00">Mar 2, 2026 · 10:00 AM</time>
+</div>
+<div class="tot-post">
+  <div class="tot-post-body">
+    test test test
+  </div>
+  <time class="tot-date" datetime="2026-03-02T10:00:00">Mar 2, 2026 · 10:00 AM</time>
+</div>
+</div>
+
+
+            <div class="tot-footer">
+        <button class="tot-expand-btn" onclick="var e=document.getElementById('latest-tot-embed'); e.classList.toggle('expanded'); this.textContent=e.classList.contains('expanded')?'Hide thread (2)':'Show thread (2)';">
+          Show thread (2)
+        </button>
+        <a href="https://grantsform.github.io/tots/quick-tot/" class="tot-thread-link"><i class="fas fa-link"></i> Permalink</a>
+      </div>
+        </div>
+      </div>
+    </div>
+    <div class="view-all-container">
+      <a href="/tots/" class="btn btn-sm btn-space">View all tots</a>
+    </div>
+</section>
+
+		</div>
+	</div>
 <style>
 .support { position: relative; z-index: 5; }
 .support-card { background: linear-gradient(180deg, #0d2137, #1a3a5c); padding: 1.5rem; border-radius: 8px; color: #e0f0ff; border: 1px solid rgba(33, 150, 243, 0.3); box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4); }
@@ -2906,8 +3099,8 @@ document.addEventListener('DOMContentLoaded', function() {
 .footer-credit { color: #5d4037; }
 .footer-credit a.accent { color: #5d4037; font-weight: 600; text-decoration: none; }
 .footer-credit a.accent:hover { text-decoration: underline; color: #2e7d32; }
-.twitter-follow-button { border: 2px solid #5d4037; border-radius: 999px; display: inline-block; color: #5d4037; padding: 0.4rem 0.9rem; text-decoration: none; font-size: 0.9rem; }
-.twitter-follow-button:hover { background: rgba(46,125,50,0.1); color: #2e7d32; border-color: #2e7d32; }
+.x-com-follow-button { border: 2px solid #5d4037; border-radius: 999px; display: inline-block; color: #5d4037; padding: 0.4rem 0.9rem; text-decoration: none; font-size: 0.9rem; }
+.x-com-follow-button:hover { background: rgba(46,125,50,0.1); color: #2e7d32; border-color: #2e7d32; }
 .socials-center { text-align: center; margin: 0.6rem 0 0.8rem; }
 .socials-center p { margin: 0; }
 .socials-center .social { display: inline-block; margin: 0 0.6rem; color: #5d4037; font-size: 28px; transition: transform 160ms ease, color 160ms ease; }
@@ -3005,7 +3198,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <div style="text-align: center;">
     <p style="margin-bottom: 1.5em;">
-      <a href="https://twitter.com/grantsform" class="twitter-follow-button" style="color: #5d4037;" target="_blank" rel="noopener">
+      <a href="https://x.com/grantsform" class="x-com-follow-button" style="color: #5d4037;" target="_blank" rel="noopener">
         Follow @GrantsForm
       </a>
     </p>
@@ -3027,5 +3220,39 @@ document.addEventListener('DOMContentLoaded', function() {
     <script type="text/javascript" src="/js/custom.js"></script>
     
     
+        <script>
+        
+        (function(){
+            function fillWaves(el){
+                if(!el) return;
+                const wave = '〰';
+                
+                const probe = document.createElement('span');
+                probe.style.visibility = 'hidden';
+                probe.style.position = 'absolute';
+                probe.style.whiteSpace = 'nowrap';
+                probe.style.font = getComputedStyle(el).font || '';
+                probe.textContent = wave;
+                document.body.appendChild(probe);
+                const charW = probe.getBoundingClientRect().width || 8;
+                document.body.removeChild(probe);
+                const available = Math.max(0, el.clientWidth);
+                
+                const count = Math.max(0, Math.ceil(available / charW) - 1);
+                el.textContent = wave.repeat(count);
+            }
+            function refreshAll(){
+                document.querySelectorAll('.tot-gag').forEach(el=>fillWaves(el));
+            }
+            document.addEventListener('DOMContentLoaded', function(){
+                refreshAll();
+                window.addEventListener('resize', function(){
+                    
+                    clearTimeout(window.__tot_gag_resize);
+                    window.__tot_gag_resize = setTimeout(refreshAll, 120);
+                });
+            });
+        })();
+        </script>
 </body>
 </html>

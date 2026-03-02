@@ -2,13 +2,13 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
-    <title>Coming Soon - GRANT&#39;S FORM - Dilutions Of Grant&#39;ur</title>
-    <meta name="description" content="Example Series">
+    <title>Tots - GRANT&#39;S FORM - Dilutions Of Grant&#39;ur</title>
+    <meta name="description" content="A stream of self-contained thoughts — micro-posts, hot takes, and tiny threads.">
     <meta name="author" content="Joshua Steven Grant (ie: Jost Grant)">
     <meta name="keywords" content="LISP, Godot, Devlog, Life">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon.ico">
-    <link rel="canonical" href="https://grantsform.github.io/series/coming-soon/">
+    <link rel="canonical" href="https://grantsform.github.io/tots/">
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -919,35 +919,230 @@ window.addEventListener('resize', function() {
         <main class="site-main" style="overflow-x: hidden; max-width: 100vw;">
             
 <style>
-.posts-page { position: relative; z-index: 10; }
-.posts-page h1 { color: #ffd54f; }
-.posts-page .lead { color: #e0f7fa; }
-.posts-page h2 { color: #ffd54f; }
-.posts-page .card { background: linear-gradient(180deg, #0a1628, #1e3a5f); border: 1px solid rgba(33,150,243,0.3); color: #e0f7fa; }
-.posts-page .card-title a { color: #64b5f6; }
-.posts-page .card-title a:hover { color: #ffd54f; }
-.posts-page .card-text { color: rgba(224,247,250,0.85); }
-.posts-page .text-muted { color: rgba(100,181,246,0.7) !important; }
-.posts-page .badge.bg-primary { background: rgba(33,150,243,0.3) !important; color: #4dd0e1; }
-.posts-page .card.border-warning { border-color: #ffd54f !important; }
-.posts-page .badge.bg-warning { background: #ffd54f !important; color: #0a1628 !important; }
-.posts-page .badge.bg-secondary { background: rgba(33,150,243,0.2) !important; color: #64b5f6; }
-.posts-page .text-warning { color: #ffd54f !important; }
+.tots-page { position: relative; z-index: 10; }
+.tots-page h1 { color: #ffd54f; }
+.tots-page .lead { color: #e0f7fa; }
+
+.tot-thread-header h3 { margin: 0 0 0.35rem 0; color: #ffd54f; font-size: 1.05rem; }
+.tot-thread-desc { color: rgba(224,240,255,0.6); margin: 0 0 0.6rem 0; }
+
+.tot-feed { max-width: 900px; margin: 0 auto; }
+
+.tot-thread-card {
+  background: linear-gradient(180deg, #0d2137, #1a3a5c);
+  border: 1px solid rgba(33, 150, 243, 0.3);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  color: #e0f0ff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.tot-thread-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+ 
+.tot-thread-card .tot-thread-posts .tot-post ~ .tot-post { display: none; }
+.tot-thread-card.expanded .tot-thread-posts .tot-post ~ .tot-post {
+  display: block;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(33,150,243,0.2);
+}
+
+.tot-expand-btn {
+  background: none;
+  border: 1px solid rgba(33,150,243,0.3);
+  color: #64b5f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tot-expand-btn:hover { background: rgba(33,150,243,0.15); color: #ffd54f; border-color: #ffd54f; }
+
+.tot-post-body {
+  color: #e0f0ff;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.tot-post-body p { margin: 0 0 0.5rem 0; }
+.tot-post-body p:last-child { margin-bottom: 0; }
+
+.tot-date {
+  display: block;
+  color: rgba(100,181,246,0.7);
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.post-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+.post-tag { background: rgba(33, 150, 243, 0.2); color: #64b5f6; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; text-decoration: none; transition: background 0.15s; }
+.post-tag:hover { background: rgba(33, 150, 243, 0.35); }
+
+.tot-gag { color: rgba(224,240,255,0.45); text-align: center; font-size: 0.9rem; margin: 0.35rem 0 0.6rem 0; }
+
+.tot-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(33,150,243,0.15);
+}
+.tot-thread-link {
+  color: #64b5f6;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+.tot-thread-link:hover { color: #ffd54f; }
+.tot-reply-count {
+  color: rgba(100,181,246,0.6);
+  font-size: 0.8rem;
+}
+.tot-permalink {
+  color: rgba(100,181,246,0.5);
+  font-size: 0.75rem;
+  text-decoration: none;
+  margin-left: auto;
+}
+.tot-permalink:hover { color: #ffd54f; }
+
+.tots-rss-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #64b5f6;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+.tots-rss-link:hover { color: #ffd54f; }
 </style>
-<div class="w-9/10 max-w-7xl mx-auto px-4 posts-page">
-  <div class="row">
-    <div class="col-12">
-      <header class="mb-4">
-        <h1>Coming Soon</h1>
-        <p class="lead">Collections of related posts.</p>
-      </header>
-      
-      <div class="row">
-        
-      </div>
+
+<div class="w-9/10 max-w-7xl mx-auto px-4 tots-page">
+  <header class="mb-4">
+    <h1>
+      <i class="fas fa-thought-bubble"></i> Tots
+      <a href="/tots/index.xml" class="tots-rss-link" title="Tots RSS Feed">
+        <i class="fas fa-rss"></i> RSS
+      </a>
+    </h1>
+    <p class="lead">A stream of self-contained thoughts</p>
+  </header>
+
+  <div class="tot-feed">
+    
+    
+
+    
+
+    
+    <div id="tots-tag-filter" style="margin-bottom:0.8rem;">
+      <button class="tag-filter-btn btn btn-sm" data-tag="__all__">All</button>
+        <button class="tag-filter-btn btn btn-sm" data-tag="intro">intro</button>
     </div>
+
+      <article class="tot-thread-card" data-tags="intro">
+        <div class="tot-thread-header">
+          <h3>A Quick Tot</h3>
+          <p class="tot-thread-desc">What are tots and how I&#39;m gonna use them over other services.</p>
+        </div>
+        <div class="post-tags">
+          <a href="/tots/?tag=intro" class="post-tag">#intro</a>
+        </div>
+          <div class="tot-gag"></div>
+
+        <div class="tot-thread-posts">
+<div class="tot-post">
+  <div class="tot-post-body">
+    Hey, hi, howdy everybody! This is example of a <code>tot</code>. A Tot is my site&rsquo;s answer to a self-hosted microblog kind-of / kinda thing. lol I don&rsquo;t know if it&rsquo;s the right answer, but it&rsquo;s a gradient solution between a full-blown post and the misc thought / quirky posting  and/or meme&rsquo;n I&rsquo;m apt to &ldquo;do on the timeline&rdquo;. This is more intended for / as progress over time that I plan to publically iterate on.
+<a href="/tots/?tag=intro" class="post-tag">#intro</a>
+  </div>
+  <div class="tot-refs">
+    <span class="muted">References:</span><a href="https://grantsform.github.io/tots/test-refs/#test-refs" class="tot-ref-link" title="Permalink to tot test-refs"><i class="fas fa-link"></i> test-refs</a>
+  </div>
+  <time class="tot-date" datetime="2026-03-02T10:00:00">Mar 2, 2026 · 10:00 AM</time>
+</div>
+<div class="tot-post">
+  <div class="tot-post-body">
+    test test test
+  </div>
+  <time class="tot-date" datetime="2026-03-02T10:00:00">Mar 2, 2026 · 10:00 AM</time>
+</div>
+</div>
+
+
+        <div class="tot-card-footer">
+          <button class="tot-thread-link tot-expand-btn" onclick="var c=this.closest('article.tot-thread-card'); c.classList.toggle('expanded'); this.textContent = c.classList.contains('expanded') ? 'Hide thread (2)' : 'Show thread (2)';">
+            <i class="fas fa-comments"></i> Show thread (2)
+          </button>
+          <span class="tot-reply-count">1 more in thread</span>
+          <a href="/tots/quick-tot/" class="tot-permalink"><i class="fas fa-link"></i></a>
+        </div>
+      </article>
+
+      <article class="tot-thread-card" data-tags="">
+        <div class="tot-thread-header">
+          <h3>Test Refs</h3>
+          <p class="tot-thread-desc">We want to make sure refs are working correctly.</p>
+        </div>
+
+        <div class="tot-thread-posts">
+<div class="tot-post" id="test-refs">
+  <div class="tot-post-body">
+    Does this work?
+  </div>
+  <time class="tot-date" datetime="2026-03-02T10:00:00">Mar 2, 2026 · 10:00 AM</time>
+</div>
+</div>
+
+
+        <div class="tot-card-footer">
+          <a href="/tots/test-refs/" class="tot-permalink"><i class="fas fa-link"></i></a>
+        </div>
+      </article>
+  
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const container = document.getElementById('tots-tag-filter');
+      if(!container) return;
+      const buttons = container.querySelectorAll('.tag-filter-btn');
+      function clearFilter(){
+        document.querySelectorAll('article.tot-thread-card').forEach(a=>a.style.display='block');
+        buttons.forEach(b=>b.classList.remove('active'));
+      }
+      function activateTag(tag){
+        buttons.forEach(b=>b.classList.remove('active'));
+        if(tag === '__all__'){ clearFilter(); return; }
+        const btn = Array.from(buttons).find(b=>b.dataset.tag===tag);
+        if(btn) btn.classList.add('active');
+        document.querySelectorAll('article.tot-thread-card').forEach(a=>{
+          const tags = a.dataset.tags ? a.dataset.tags.split(',') : [];
+          if(tags.includes(tag)) a.style.display='block'; else a.style.display='none';
+        });
+      }
+      container.addEventListener('click', function(e){
+        const btn = e.target.closest('.tag-filter-btn');
+        if(!btn) return;
+        const tag = btn.dataset.tag;
+        if(tag === '__all__') { clearFilter(); btn.classList.add('active'); return; }
+        const wasActive = btn.classList.contains('active');
+        if(wasActive){ clearFilter(); return; }
+        activateTag(tag);
+      });
+      
+      const urlTag = new URLSearchParams(window.location.search).get('tag');
+      if(urlTag) activateTag(urlTag);
+    });
+    </script>
+
   </div>
 </div>
+
 
         </main>
         

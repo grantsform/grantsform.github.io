@@ -24,6 +24,7 @@
     
     
     <link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="Posts RSS Feed">
+    <link rel="alternate" type="application/rss+xml" href="/tots/index.xml" title="Tots RSS Feed">
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="RSS Feed">
     
     
@@ -747,6 +748,8 @@
         
         <a href="/series/" class="px-3 py-2 text-sm font-medium rounded-md transition-colors nav-item text-gray-300 hover:bg-gray-800 ">Series</a>
         
+        <a href="/tots/" class="px-3 py-2 text-sm font-medium rounded-md transition-colors nav-item text-gray-300 hover:bg-gray-800 ">Tots 🗨</a>
+        
         
         
         <div class="relative dropdown">
@@ -767,6 +770,7 @@
           </button>
           <div class="absolute top-full left-0 mt-1 w-32 bg-gray-800 border border-gray-700 rounded-md shadow-lg hidden" id="sub-dropdown">
             <a class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors" href="/posts/index.xml">Posts RSS</a>
+            <a class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors" href="/tots/index.xml">Tots RSS</a>
           </div>
         </div>
       </div>
@@ -803,6 +807,8 @@
       
       <a class="block px-3 py-2 text-gray-300 rounded-md transition-colors nav-item " href="/series/">Series</a>
       
+      <a class="block px-3 py-2 text-gray-300 rounded-md transition-colors nav-item " href="/tots/">Tots 🗨</a>
+      
       
       
       <div class="pt-2 border-t border-gray-700 mt-2">
@@ -816,6 +822,7 @@
       <div class="pt-2 border-t border-gray-700 mt-2">
         <p class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">Subscribe</p>
         <a class="block px-3 py-2 text-sm text-gray-400 rounded-md transition-colors nav-item" href="/posts/index.xml">Posts RSS</a>
+        <a class="block px-3 py-2 text-sm text-gray-400 rounded-md transition-colors nav-item" href="/tots/index.xml">Tots RSS</a>
       </div>
       
       <div class="pt-2 border-t border-gray-700 mt-2 flex space-x-4 px-3 py-2">
@@ -1185,8 +1192,8 @@ window.addEventListener('resize', function() {
 .footer-credit { color: #5d4037; }
 .footer-credit a.accent { color: #5d4037; font-weight: 600; text-decoration: none; }
 .footer-credit a.accent:hover { text-decoration: underline; color: #2e7d32; }
-.twitter-follow-button { border: 2px solid #5d4037; border-radius: 999px; display: inline-block; color: #5d4037; padding: 0.4rem 0.9rem; text-decoration: none; font-size: 0.9rem; }
-.twitter-follow-button:hover { background: rgba(46,125,50,0.1); color: #2e7d32; border-color: #2e7d32; }
+.x-com-follow-button { border: 2px solid #5d4037; border-radius: 999px; display: inline-block; color: #5d4037; padding: 0.4rem 0.9rem; text-decoration: none; font-size: 0.9rem; }
+.x-com-follow-button:hover { background: rgba(46,125,50,0.1); color: #2e7d32; border-color: #2e7d32; }
 .socials-center { text-align: center; margin: 0.6rem 0 0.8rem; }
 .socials-center p { margin: 0; }
 .socials-center .social { display: inline-block; margin: 0 0.6rem; color: #5d4037; font-size: 28px; transition: transform 160ms ease, color 160ms ease; }
@@ -1284,7 +1291,7 @@ window.addEventListener('resize', function() {
   
   <div style="text-align: center;">
     <p style="margin-bottom: 1.5em;">
-      <a href="https://twitter.com/grantsform" class="twitter-follow-button" style="color: #5d4037;" target="_blank" rel="noopener">
+      <a href="https://x.com/grantsform" class="x-com-follow-button" style="color: #5d4037;" target="_blank" rel="noopener">
         Follow @GrantsForm
       </a>
     </p>
@@ -1306,5 +1313,39 @@ window.addEventListener('resize', function() {
     <script type="text/javascript" src="/js/custom.js"></script>
     
     
+        <script>
+        
+        (function(){
+            function fillWaves(el){
+                if(!el) return;
+                const wave = '〰';
+                
+                const probe = document.createElement('span');
+                probe.style.visibility = 'hidden';
+                probe.style.position = 'absolute';
+                probe.style.whiteSpace = 'nowrap';
+                probe.style.font = getComputedStyle(el).font || '';
+                probe.textContent = wave;
+                document.body.appendChild(probe);
+                const charW = probe.getBoundingClientRect().width || 8;
+                document.body.removeChild(probe);
+                const available = Math.max(0, el.clientWidth);
+                
+                const count = Math.max(0, Math.ceil(available / charW) - 1);
+                el.textContent = wave.repeat(count);
+            }
+            function refreshAll(){
+                document.querySelectorAll('.tot-gag').forEach(el=>fillWaves(el));
+            }
+            document.addEventListener('DOMContentLoaded', function(){
+                refreshAll();
+                window.addEventListener('resize', function(){
+                    
+                    clearTimeout(window.__tot_gag_resize);
+                    window.__tot_gag_resize = setTimeout(refreshAll, 120);
+                });
+            });
+        })();
+        </script>
 </body>
 </html>

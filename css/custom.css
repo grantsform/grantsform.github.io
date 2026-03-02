@@ -418,6 +418,20 @@ article.space-border {
 #homepage-notice {
   background-image: repeating-linear-gradient(135deg, #ffffff 0 18px, #ffd54f 18px 36px);
   background-size: 200% 100%;
+}
+
+/* Tag styling used across site (post tags) */
+.post-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.post-tag { background: rgba(33, 150, 243, 0.2); color: #64b5f6; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; text-decoration: none; }
+.post-tag:hover { background: rgba(33, 150, 243, 0.35); }
+/* Reduce tags height by 10% (keep 90% of original) */
+.post-tag { transform: scaleY(0.9) !important; transform-origin: center; display: inline-block !important; }
+/* References list for tots */
+.tot-refs { margin-top: 0.4rem; display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.tot-refs .muted { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-right: 0.25rem; }
+.tot-refs .post-tag { padding: 0.18rem 0.45rem; font-size: 0.78rem; }
+.tot-ref-link { color: #64b5f6; background: rgba(255,255,255,0.02); padding: 0.12rem 0.45rem; border-radius: 6px; font-size: 0.8rem; text-decoration: none; display: inline-flex; gap: 0.35rem; align-items: center; }
+.tot-ref-link:hover { background: rgba(33,150,243,0.08); color: #ffd54f; }
   /* animation moved to inject-notice.js to avoid template parsing of @keyframes */
 }
 
