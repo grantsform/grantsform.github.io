@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.155.3">
+	<meta name="generator" content="Hugo 0.155.3"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=46447&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <title>GRANT&#39;S FORM - Dilutions Of Grant&#39;ur</title>
     <meta name="description" content="GRANT&#39;S FORM - Dilutions Of Grant&#39;eur.">
@@ -9,7 +9,7 @@
     <meta name="keywords" content="LISP, Godot, Devlog, Life">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon.ico">
-    <link rel="canonical" href="https://grantsform.github.io/">
+    <link rel="canonical" href="http://localhost:46447/">
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -1421,6 +1421,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="sc-counter" style="text-align:center;margin-top:0.5rem;">
     <span class="sc-counter-current">1</span> / <span class="sc-counter-total">4</span>
   </div>
+
+  
+  <div class="sc-mobile-nav">
+    <button class="sc-mobile-prev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+    <span class="sc-mobile-counter"><span class="sc-counter-current-m">1</span> / <span class="sc-counter-total-m">4</span></span>
+    <button class="sc-mobile-next" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
 </section>
 
 
@@ -1634,7 +1641,35 @@ document.addEventListener('DOMContentLoaded', function() {
 .sc-counter-current { color: #ffd54f; font-weight: 600; }
 
  
+.sc-mobile-nav { display: none; }
+
+ 
 @media (max-width: 768px) {
+   
+  .sc-track {
+    display: block !important;
+    transform: none !important;
+    transition: none !important;
+    position: relative;
+  }
+  .sc-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    min-width: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    pointer-events: none;
+  }
+  .sc-slide.sc-fade-active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    pointer-events: auto;
+  }
+
+   
   .sc-card {
     flex-direction: column;
     min-height: auto;
@@ -1642,15 +1677,85 @@ document.addEventListener('DOMContentLoaded', function() {
   .sc-img-wrap {
     flex: none;
     max-width: 100%;
-    height: 200px;
+    height: 180px;
   }
   .sc-body {
-    padding: 1.4rem 1.3rem;
+    padding: 1rem 1.2rem;
   }
-  .sc-arrow { width: 36px; height: 36px; font-size: 0.95rem; }
-  .sc-prev { left: 8px; }
-  .sc-next { right: 8px; }
-  .sc-title { font-size: 1.25rem !important; }
+  .sc-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .sc-title { font-size: 1.2rem !important; }
+
+   
+  .sc-viewport {
+    border-radius: 10px;
+  }
+
+   
+  .sc-arrow { width: 34px; height: 34px; font-size: 0.9rem; }
+  .sc-prev { left: 6px; }
+  .sc-next { right: 6px; }
+
+   
+  .sc-dots { gap: 8px; }
+  .sc-dot { width: 14px; height: 14px; border-width: 3px; }
+
+   
+  .sc-progress-track,
+  .sc-counter { display: none; }
+
+   
+  .sc-arrow { display: none; }
+
+   
+  .sc-mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.6rem;
+  }
+  .sc-mobile-nav button {
+    width: 40px; height: 40px;
+    border: 2px solid rgba(255,213,79,0.4);
+    border-radius: 50%;
+    background: rgba(10,22,40,0.7);
+    color: #ffd54f;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .sc-mobile-nav button:hover,
+  .sc-mobile-nav button:active {
+    background: rgba(255,213,79,0.2);
+    border-color: #ffd54f;
+  }
+  .sc-mobile-counter {
+    color: #90caf9;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    min-width: 3em;
+    text-align: center;
+  }
+  .sc-mobile-counter .sc-counter-current-m {
+    color: #ffd54f;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 480px) {
+  .sc-img-wrap { height: 140px; }
+  .sc-title { font-size: 1.05rem !important; }
+  .sc-subtitle { font-size: 0.85rem; }
+  .sc-desc { font-size: 0.85rem; }
+  .sc-btn { padding: 0.6em 1em; font-size: 0.9rem; }
 }
 </style>
 
@@ -1677,12 +1782,37 @@ document.addEventListener('DOMContentLoaded', function() {
     let progRAF  = null;
     let progStart = null;
 
+    
+    function isMobile() { return window.matchMedia('(max-width: 768px)').matches; }
+
     function goTo(idx, skipAnim) {
       current = ((idx % total) + total) % total;
-      track.style.transition = skipAnim ? 'none' : 'transform 0.5s cubic-bezier(0.4,0,0.2,1)';
-      track.style.transform  = 'translateX(-' + (current * 100) + '%)';
+
+      if (isMobile()) {
+        
+        track.style.transform = 'none';
+        track.style.transition = 'none';
+        slides.forEach(function(s, i) {
+          s.classList.toggle('sc-fade-active', i === current);
+        });
+      } else {
+        
+        track.style.transition = skipAnim ? 'none' : 'transform 0.5s cubic-bezier(0.4,0,0.2,1)';
+        var offset = 0;
+        for (var i = 0; i < current; i++) {
+          offset += slides[i].getBoundingClientRect().width;
+        }
+        offset = Math.round(offset);
+        track.style.transform = 'translate3d(-' + offset + 'px,0,0)';
+        
+        slides.forEach(function(s) { s.classList.remove('sc-fade-active'); });
+      }
+
       dots.forEach(function(d,i){ d.classList.toggle('sc-dot-active', i === current); });
       if (curEl) curEl.textContent = current + 1;
+      
+      var curElM = document.querySelector('.sc-counter-current-m');
+      if (curElM) curElM.textContent = current + 1;
       resetProgress();
     }
 
@@ -1722,6 +1852,12 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', function(){ next(); resetProgress(); });
 
      
+    var mPrev = document.querySelector('.sc-mobile-prev');
+    var mNext = document.querySelector('.sc-mobile-next');
+    if (mPrev) mPrev.addEventListener('click', function(){ prev(); resetProgress(); });
+    if (mNext) mNext.addEventListener('click', function(){ next(); resetProgress(); });
+
+     
     dots.forEach(function(dot){
       dot.addEventListener('click', function(){ goTo(parseInt(dot.dataset.goto, 10)); });
     });
@@ -1746,6 +1882,16 @@ document.addEventListener('DOMContentLoaded', function() {
      
     goTo(0, true);
     startAuto();
+
+     
+    var resizeTimer;
+    window.addEventListener('resize', function(){
+      
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function(){
+        goTo(current, true);
+      }, 100);
+    });
   });
 })();
 </script>
@@ -2809,7 +2955,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
-  <script type="module" src="/js/mindmap.js?v=1772582873"></script>
+  <script type="module" src="/js/mindmap.js?v=1772591040"></script>
 <style>
 .featured { margin-top: 2rem; margin-bottom: 1.25rem; }
 .featured h2 { color: #ffd54f; }
@@ -3109,7 +3255,7 @@ details[open] summary .arrow { transform: rotate(90deg); }
     <p style="color: #e8d4bc;">A series is a collection of posts, such as guides, tutorials, or themed articles. Explore our curated series below.</p>
     <div class="featured-series-flex">
       <div class="featured-series-card" id="series-card">
-        <h3><a href="https://grantsform.github.io/series/coming-soon/">Coming Soon</a></h3>
+        <h3><a href="http://localhost:46447/series/coming-soon/">Coming Soon</a></h3>
         <p>Example Series</p>
         <ul>
           
@@ -3122,7 +3268,7 @@ details[open] summary .arrow { transform: rotate(90deg); }
                 data-index="0"
                 data-title="Coming Soon"
                 data-desc="Example Series"
-                data-url="https://grantsform.github.io/series/coming-soon/">
+                data-url="http://localhost:46447/series/coming-soon/">
           Coming Soon
         </button>
       </div>
@@ -3397,7 +3543,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="tot-embed-container">
           <div class="tot-embed" id="latest-tot-embed">
             <div class="tot-thread-header">
-              <h3><a href="https://grantsform.github.io/tots/quick-tot/" class="latest-tot-link">A Quick Tot</a></h3>
+              <h3><a href="http://localhost:46447/tots/quick-tot/" class="latest-tot-link">A Quick Tot</a></h3>
               <p class="tot-thread-desc">What are tots and how I&#39;m gonna use them over other services.</p>
             </div>
 
@@ -3414,7 +3560,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <a href="/tots/?tag=intro" class="post-tag">#intro</a>
   </div>
   <div class="tot-refs">
-    <span class="muted">References:</span><a href="https://grantsform.github.io/tots/test-refs/#test-refs" class="tot-ref-link" title="Permalink to tot test-refs"><i class="fas fa-link"></i> test-refs</a>
+    <span class="muted">References:</span><a href="http://localhost:46447/tots/test-refs/#test-refs" class="tot-ref-link" title="Permalink to tot test-refs"><i class="fas fa-link"></i> test-refs</a>
   </div>
   <time class="tot-date" datetime="2026-03-02T10:00:00">Mar 2, 2026 · 10:00 AM</time>
 </div>
@@ -3431,7 +3577,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <button class="tot-expand-btn" onclick="var e=document.getElementById('latest-tot-embed'); e.classList.toggle('expanded'); this.textContent=e.classList.contains('expanded')?'Hide thread (2)':'Show thread (2)';">
           Show thread (2)
         </button>
-        <a href="https://grantsform.github.io/tots/quick-tot/" class="tot-thread-link"><i class="fas fa-link"></i> Permalink</a>
+        <a href="http://localhost:46447/tots/quick-tot/" class="tot-thread-link"><i class="fas fa-link"></i> Permalink</a>
       </div>
         </div>
       </div>
