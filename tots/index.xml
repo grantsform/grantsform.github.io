@@ -1,0 +1,53 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GRANT&#39;S FORM - Dilutions Of Grant&#39;ur — Tots</title>
+    <link>https://grantsform.github.io/tots/</link>
+    <description>A stream of self-contained thoughts from GRANT&#39;S FORM - Dilutions Of Grant&#39;ur</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Apr 2026 12:08:10 -0500</lastBuildDate>
+    <atom:link href="https://grantsform.github.io/tots/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://grantsform.github.io/tots/quick-tot/</link>
+      <pubDate>Sun, 05 Apr 2026 10:00:00 &#43;0000</pubDate>
+      <guid>https://grantsform.github.io/tots/quick-tot/</guid>
+      <dc:creator>Joshua Steven Grant (ie: Jost Grant)</dc:creator>
+      <category>intro</category>
+      <description><![CDATA[<div class="tot-thread-posts">
+<div class="tot-post">
+  <div class="tot-post-body">
+    Hey, hi, howdy everybody! This is example of a <code>tot</code>. A Tot is my site&rsquo;s answer to a self-hosted microblog kind-of / kinda thing. lol I don&rsquo;t know if it&rsquo;s the right answer, but it&rsquo;s a gradient solution between a full-blown post and the misc thought / quirky posting  and/or meme&rsquo;n I&rsquo;m apt to &ldquo;do on the timeline&rdquo;. This is more intended for / as progress over time that I plan to publically iterate on.
+<a href="/tots/?tag=intro" class="post-tag">#intro</a>
+  </div>
+  <div class="tot-refs">
+    <span class="muted">References:</span><a href="https://grantsform.github.io/tots/test-refs/#test-refs" class="tot-ref-link" title="Permalink to tot test-refs"><i class="fas fa-link"></i> test-refs</a>
+  </div>
+  <time class="tot-date" datetime="2026-04-05T10:00:00">Apr 5, 2026 · 10:00 AM</time>
+</div>
+<div class="tot-post">
+  <div class="tot-post-body">
+    test test test
+  </div>
+  <time class="tot-date" datetime="2026-04-05T10:00:00">Apr 5, 2026 · 10:00 AM</time>
+</div>
+</div>
+]]></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://grantsform.github.io/tots/test-refs/</link>
+      <pubDate>Sun, 05 Apr 2026 10:00:00 &#43;0000</pubDate>
+      <guid>https://grantsform.github.io/tots/test-refs/</guid>
+      <dc:creator>Joshua Steven Grant (ie: Jost Grant)</dc:creator>
+      <description><![CDATA[<div class="tot-thread-posts">
+<div class="tot-post" id="test-refs">
+  <div class="tot-post-body">
+    Does this work?
+  </div>
+  <time class="tot-date" datetime="2026-04-05T10:00:00">Apr 5, 2026 · 10:00 AM</time>
+</div>
+</div>
+]]></description>
+    </item>
+  </channel>
+</rss>
