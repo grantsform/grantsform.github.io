@@ -466,25 +466,25 @@ h1, h2 {
 }
 
 @media (max-width: 1200px) {
-  .vault-card { 
+  .ation-card { 
     grid-template-columns: 1fr !important;
   }
 }
 
 @media (max-width: 800px) {
-  .vault-card { 
+  .ation-card { 
     flex-basis: 45%; 
   }
-  .vaults-grid { 
+  .ations-grid { 
     grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (max-width: 500px) {
-  .vault-card { 
+  .ation-card { 
     flex-basis: 100%; 
   }
-  .vaults-grid { 
+  .ations-grid { 
     grid-template-columns: 1fr !important;
   }
 }
@@ -526,7 +526,7 @@ h1, h2 {
 
   /* small-screen fallback */
   @media (max-width: 480px) {
-    .vault-desc {
+    .ation-desc {
       width: auto;
       max-width: 260px;
       padding: 0.6rem 0.75rem;
